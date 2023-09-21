@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 import { motion } from 'framer-motion';
 import { Github, Linkedin } from 'lucide-react';
@@ -14,25 +13,24 @@ import TypeIt from 'typeit-react';
 
 import { handleWidth } from '@/lib/utils';
 
-import clerk from '../../assets/icons/clerk.png';
-import css from '../../assets/icons/css.svg';
-import html from '../../assets/icons/html.svg';
-import js from '../../assets/icons/javascript.svg';
-import me from '../../assets/icons/me.png';
-import next16 from '../../assets/icons/next-16.svg';
-import nextFill from '../../assets/icons/nextjs-fill.svg';
-import playwright from '../../assets/icons/playwright.svg';
-import prisma from '../../assets/icons/prisma-original.svg';
-import prismaFill from '../../assets/icons/prisma.svg';
-import react from '../../assets/icons/react.svg';
-import shadcn from '../../assets/icons/shadcn-ui-original.png';
-import tailwind from '../../assets/icons/tailwindcss.svg';
-import ts from '../../assets/icons/typescript.svg';
-import zustand from '../../assets/icons/zustand-original.png';
+import clerk from '../assets/icons/clerk.png';
+import css from '../assets/icons/css.svg';
+import html from '../assets/icons/html.svg';
+import js from '../assets/icons/javascript.svg';
+import me from '../assets/icons/me.png';
+import next16 from '../assets/icons/next-16.svg';
+import nextFill from '../assets/icons/nextjs-fill.svg';
+import playwright from '../assets/icons/playwright.svg';
+import prisma from '../assets/icons/prisma-original.svg';
+import prismaFill from '../assets/icons/prisma.svg';
+import react from '../assets/icons/react.svg';
+import shadcn from '../assets/icons/shadcn-ui-original.png';
+import tailwind from '../assets/icons/tailwindcss.svg';
+import ts from '../assets/icons/typescript.svg';
+import zustand from '../assets/icons/zustand-original.png';
 
 const HomePage: NextPage = () => {
   const { theme } = useTheme();
-  const router = useRouter();
   const [iconSize, setIconSize] = useState(0);
 
   const skills: { id: number; url: string }[] = [
@@ -92,12 +90,15 @@ const HomePage: NextPage = () => {
             </p>
 
             <p className="break-words">
-              Hi, I'm Marian Pidchashyi. A passionate Front-end React Developer
-              based in Ivano-Frankivsk, Ukraine. 📍
+              Hi, {"I'm "} Marian Pidchashyi. A passionate Front-end React
+              Developer based in Ivano-Frankivsk, Ukraine. 📍
             </p>
 
             <div className="flex items-center justify-center gap-x-4 pb-8 md:justify-start">
-              <Link href="https://www.linkedin.com/in/marian-pidchashyi">
+              <Link
+                aria-label="Linkedin"
+                href="https://www.linkedin.com/in/marian-pidchashyi"
+              >
                 <motion.div
                   animate={{ x: 0 }}
                   initial={{ x: -1000 }}
@@ -110,7 +111,7 @@ const HomePage: NextPage = () => {
                 </motion.div>
               </Link>
 
-              <Link href="https://github.com/Marian1309">
+              <Link aria-label="github" href="https://github.com/Marian1309">
                 <motion.div
                   animate={{ x: 0 }}
                   initial={{ x: -1000 }}
