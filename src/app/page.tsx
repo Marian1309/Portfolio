@@ -30,7 +30,7 @@ import ts from '../assets/icons/typescript.svg';
 import zustand from '../assets/icons/zustand-original.png';
 
 const HomePage: NextPage = () => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [iconSize, setIconSize] = useState(0);
 
   const skills: { id: number; url: string }[] = [
@@ -39,11 +39,11 @@ const HomePage: NextPage = () => {
     { id: 3, url: js },
     { id: 4, url: ts },
     { id: 5, url: react },
-    { id: 6, url: theme === 'dark' ? nextFill : next16 },
+    { id: 6, url: resolvedTheme === 'dark' ? nextFill : next16 },
     { id: 7, url: tailwind },
     { id: 8, url: shadcn },
     { id: 9, url: zustand },
-    { id: 10, url: theme === 'dark' ? prismaFill : prisma },
+    { id: 10, url: resolvedTheme === 'dark' ? prismaFill : prisma },
     { id: 11, url: clerk },
     { id: 12, url: playwright }
   ];
@@ -106,7 +106,7 @@ const HomePage: NextPage = () => {
                 >
                   <Linkedin
                     className="cursor-pointer hover:animate-spin"
-                    color={theme === 'dark' ? '#fff' : '#000'}
+                    color={resolvedTheme === 'dark' ? '#fff' : '#000'}
                   />
                 </motion.div>
               </Link>
@@ -119,7 +119,7 @@ const HomePage: NextPage = () => {
                 >
                   <Github
                     className="cursor-pointer hover:animate-spin"
-                    color={theme === 'dark' ? '#fff' : '#000'}
+                    color={resolvedTheme === 'dark' ? '#fff' : '#000'}
                   />
                 </motion.div>
               </Link>

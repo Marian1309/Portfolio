@@ -37,7 +37,7 @@ type Props = {
 const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(poppins.className, 'h-adaptive')}>
+      <body className={cn(poppins.className, 'h-adaptive overflow-hidden')}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
