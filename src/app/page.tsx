@@ -71,11 +71,11 @@ const HomePage: NextPage = () => {
   window.addEventListener('resize', handle);
 
   return (
-    <section className="container flex items-center justify-center pt-4 md:pt-32">
+    <section className="container flex items-center justify-center pt-2 md:pt-32">
       <div>
         <div className="flex-row items-center justify-center text-center md:flex md:text-left">
           <div
-            className="order-1 mx-auto my-[20px] h-[25rem] w-[20rem] animate-[morph_8s_ease-in-out_infinite] border-[2px] border-solid border-[#2d2e32] bg-cover bg-center bg-no-repeat transition-[all_1s_ease-in-out] md:ml-12"
+            className="order-1 mx-auto my-[20px] h-[22rem] w-[18rem] animate-[morph_8s_ease-in-out_infinite] border-[2px] border-solid border-[#2d2e32] bg-cover bg-center bg-no-repeat transition-[all_1s_ease-in-out] md:ml-12"
             style={{ backgroundImage: `url(${me.src})` }}
           />
 
