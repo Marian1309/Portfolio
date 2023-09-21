@@ -1,32 +1,72 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 import { Github, Linkedin } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import TypeIt from 'typeit-react';
 
+import { handleWidth } from '@/lib/utils';
+
+import clerk from './clerk.png';
 import css from './css.svg';
 import html from './html.svg';
 import js from './javascript.svg';
 import me from './me.png';
-import next from './next-js.svg';
+import next16 from './next-16.svg';
+import playwright from './playwright.svg';
+import prisma from './prisma-original.svg';
 import react from './react.svg';
+import shadcn from './shadcn-ui-original.png';
 import tailwind from './tailwindcss.svg';
 import ts from './typescript.svg';
+import zustand from './zustand-original.png';
 
 const HomePage: NextPage = () => {
+  const { theme } = useTheme();
+  const [iconSize, setIconSize] = useState(0);
+
   const skills: { id: number; url: string }[] = [
     { id: 1, url: html },
     { id: 2, url: css },
     { id: 3, url: js },
     { id: 4, url: ts },
     { id: 5, url: react },
-    { id: 6, url: next },
-    { id: 7, url: tailwind }
+    { id: 6, url: next16 },
+    { id: 7, url: tailwind },
+    { id: 8, url: shadcn },
+    { id: 9, url: zustand },
+    { id: 10, url: prisma },
+    { id: 11, url: clerk },
+    { id: 12, url: playwright }
   ];
+
+  const handle = () => {
+    const width = handleWidth();
+
+    if (width > 700) {
+      setIconSize(32);
+      return;
+    }
+
+    if (width > 400) {
+      setIconSize(24);
+      return;
+    }
+
+    setIconSize(16);
+  };
+
+  useEffect(() => {
+    handle();
+  }, []);
+
+  window.addEventListener('resize', handle);
 
   return (
     <section className="container flex items-center justify-center pt-4 md:pt-32">
@@ -38,7 +78,7 @@ const HomePage: NextPage = () => {
           />
 
           <div className="flex max-w-[500px] flex-col gap-y-6">
-            <p className="text-3xl font-bold text-neutral-800 md:text-5xl lg:text-6xl">
+            <p className="text-3xl font-bold text-neutral-800 dark:text-white md:text-5xl lg:text-6xl">
               <TypeIt
                 options={{
                   strings: ['Front-End React <br /> Developer'],
@@ -52,14 +92,17 @@ const HomePage: NextPage = () => {
               based in Ivano-Frankivsk, Ukraine. 📍
             </p>
 
-            <div className="flex gap-x-4 pb-4">
+            <div className="flex items-center justify-center gap-x-4 pb-8 md:justify-start">
               <Link href="https://www.linkedin.com/in/marian-pidchashyi">
                 <motion.div
                   animate={{ x: 0 }}
                   initial={{ x: -100 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Linkedin className="cursor-pointer hover:animate-spin" />
+                  <Linkedin
+                    className="cursor-pointer hover:animate-spin"
+                    color={theme === 'dark' ? '#fff' : '#000'}
+                  />
                 </motion.div>
               </Link>
 
@@ -69,15 +112,18 @@ const HomePage: NextPage = () => {
                   initial={{ x: -100 }}
                   transition={{ delay: 1 }}
                 >
-                  <Github className="cursor-pointer hover:animate-spin" />
+                  <Github
+                    className="cursor-pointer hover:animate-spin"
+                    color={theme === 'dark' ? '#fff' : '#000'}
+                  />
                 </motion.div>
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="justify-left flex items-center gap-x-4">
-          <p className="border-r-[1px] border-solid border-black pr-[2rem] text-lg leading-5">
+        <div className="flex items-center justify-center gap-x-4 md:justify-start">
+          <p className="border-r-[1px] border-solid border-black pr-[8px] text-lg leading-5 md:pr-[2rem]">
             Teck Stack
           </p>
 
@@ -85,9 +131,9 @@ const HomePage: NextPage = () => {
             <Image
               key={skill.id}
               alt={skill.url}
-              height={16}
+              height={iconSize}
               src={skill.url}
-              width={16}
+              width={iconSize}
             />
           ))}
         </div>
