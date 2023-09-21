@@ -18,7 +18,7 @@ const Header: FC = () => {
         <ThemeToggle />
 
         <button
-          className="sm:text-md text-sm transition-colors hover:text-[#641ae6] dark:text-white dark:hover:text-[#641ae6]"
+          className="sm:text-md text-sm transition-colors dark:text-white"
           onClick={() => {
             if (pathaname !== '/') {
               router.push('/');

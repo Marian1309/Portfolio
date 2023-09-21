@@ -17,11 +17,7 @@ module.exports = {
 
     extend: {
       screens: {
-        xs: '375px',
-        front: '80px'
-      },
-      height: {
-        adaptive: '100svh'
+        xs: '375px'
       },
 
       colors: {

@@ -5,7 +5,6 @@ import type { Metadata } from 'next';
 import ThemeProvider from '@/services/providers/theme';
 
 import { poppins } from '@/lib/fonts';
-import { cn } from '@/lib/utils';
 
 import Header from '@/components/layout/header';
 
@@ -37,15 +36,17 @@ type Props = {
 const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(poppins.className, 'h-adaptive')}>
+      <body className={poppins.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           themes={['light', 'dark']}
         >
-          <Header />
-          {children}
+          <div className="overflow-hidden">
+            <Header />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

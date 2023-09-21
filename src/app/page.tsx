@@ -77,7 +77,7 @@ const HomePage: NextPage = () => {
         resolvedTheme === 'light' && 'pt-6'
       )}
     >
-      <div>
+      <div className="overflow-hidden">
         <div className="flex-row items-center justify-center text-center md:flex md:text-left">
           <div
             className="order-1 mx-auto mb-[20px] h-[22rem] w-[18rem] animate-[morph_8s_ease-in-out_infinite] border-[2px] border-solid border-[#2d2e32] bg-cover bg-center bg-no-repeat transition-[all_1s_ease-in-out] md:ml-12"
