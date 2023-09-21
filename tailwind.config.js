@@ -21,7 +21,7 @@ module.exports = {
         front: '80px'
       },
       height: {
-        adaptive: '100dvh'
+        adaptive: '100svh'
       },
 
       colors: {
