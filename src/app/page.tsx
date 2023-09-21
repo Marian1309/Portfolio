@@ -91,7 +91,7 @@ const HomePage: NextPage = () => {
 
             <p className="break-words">
               Hi, {"I'm "} Marian Pidchashyi. A passionate Front-end React
-              Developer based in Ivano-Frankivsk, Ukraine. 📍
+              Developer based in Ivano-Frankivsk, Ukraine.
             </p>
 
             <div className="flex items-center justify-center gap-x-4 pb-8 md:justify-start">
