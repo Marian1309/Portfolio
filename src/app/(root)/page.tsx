@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { motion } from 'framer-motion';
 import { Github, Linkedin } from 'lucide-react';
@@ -31,6 +32,7 @@ import zustand from '../../assets/icons/zustand-original.png';
 
 const HomePage: NextPage = () => {
   const { theme } = useTheme();
+  const router = useRouter();
   const [iconSize, setIconSize] = useState(0);
 
   const skills: { id: number; url: string }[] = [

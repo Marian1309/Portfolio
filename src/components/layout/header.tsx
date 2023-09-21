@@ -1,16 +1,14 @@
+'use client';
+
 import type { FC } from 'react';
 
-import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 import ThemeToggle from '../common/theme-toggle';
 
 const Header: FC = () => {
-  const links: { id: number; title: string; href: string }[] = [
-    { id: 1, title: 'Home', href: '/' }
-    // { id: 2, title: 'About', href: '/about' },
-    // { id: 3, title: 'Projects', href: '/projects' },
-    // { id: 4, title: 'Projects', href: '/contact' }
-  ];
+  const router = useRouter();
+  const pathaname = usePathname();
 
   return (
     <div className="flex h-20 w-full items-center justify-between px-8 shadow-[0_0_10px_rgba(0,0,0,.09)]">
@@ -19,15 +17,16 @@ const Header: FC = () => {
       <div className="flex items-center justify-center gap-x-4">
         <ThemeToggle />
 
-        {links.map((link) => (
-          <Link
-            key={link.id}
-            className="sm:text-md text-sm transition-colors hover:text-[#641ae6] dark:text-white dark:hover:text-[#641ae6]"
-            href={link.href}
-          >
-            {link.title}
-          </Link>
-        ))}
+        <button
+          className="sm:text-md text-sm transition-colors hover:text-[#641ae6] dark:text-white dark:hover:text-[#641ae6]"
+          onClick={() => {
+            if (pathaname !== '/') {
+              router.push('/');
+            }
+          }}
+        >
+          Home
+        </button>
       </div>
     </div>
   );
