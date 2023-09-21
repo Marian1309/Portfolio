@@ -13,19 +13,21 @@ import TypeIt from 'typeit-react';
 
 import { handleWidth } from '@/lib/utils';
 
-import clerk from './clerk.png';
-import css from './css.svg';
-import html from './html.svg';
-import js from './javascript.svg';
-import me from './me.png';
-import next16 from './next-16.svg';
-import playwright from './playwright.svg';
-import prisma from './prisma-original.svg';
-import react from './react.svg';
-import shadcn from './shadcn-ui-original.png';
-import tailwind from './tailwindcss.svg';
-import ts from './typescript.svg';
-import zustand from './zustand-original.png';
+import clerk from '../../assets/icons/clerk.png';
+import css from '../../assets/icons/css.svg';
+import html from '../../assets/icons/html.svg';
+import js from '../../assets/icons/javascript.svg';
+import me from '../../assets/icons/me.png';
+import next16 from '../../assets/icons/next-16.svg';
+import nextFill from '../../assets/icons/nextjs-fill.svg';
+import playwright from '../../assets/icons/playwright.svg';
+import prisma from '../../assets/icons/prisma-original.svg';
+import prismaFill from '../../assets/icons/prisma.svg';
+import react from '../../assets/icons/react.svg';
+import shadcn from '../../assets/icons/shadcn-ui-original.png';
+import tailwind from '../../assets/icons/tailwindcss.svg';
+import ts from '../../assets/icons/typescript.svg';
+import zustand from '../../assets/icons/zustand-original.png';
 
 const HomePage: NextPage = () => {
   const { theme } = useTheme();
@@ -37,11 +39,11 @@ const HomePage: NextPage = () => {
     { id: 3, url: js },
     { id: 4, url: ts },
     { id: 5, url: react },
-    { id: 6, url: next16 },
+    { id: 6, url: theme === 'dark' ? nextFill : next16 },
     { id: 7, url: tailwind },
     { id: 8, url: shadcn },
     { id: 9, url: zustand },
-    { id: 10, url: prisma },
+    { id: 10, url: theme === 'dark' ? prismaFill : prisma },
     { id: 11, url: clerk },
     { id: 12, url: playwright }
   ];
@@ -77,7 +79,7 @@ const HomePage: NextPage = () => {
             style={{ backgroundImage: `url(${me.src})` }}
           />
 
-          <div className="flex max-w-[500px] flex-col gap-y-6">
+          <div className="mx-auto flex max-w-[500px] flex-col gap-y-6">
             <p className="text-3xl font-bold text-neutral-800 dark:text-white md:text-5xl lg:text-6xl">
               <TypeIt
                 options={{
@@ -87,7 +89,7 @@ const HomePage: NextPage = () => {
               />
             </p>
 
-            <p>
+            <p className="break-words">
               Hi, I'm Marian Pidchashyi. A passionate Front-end React Developer
               based in Ivano-Frankivsk, Ukraine. 📍
             </p>
@@ -96,7 +98,7 @@ const HomePage: NextPage = () => {
               <Link href="https://www.linkedin.com/in/marian-pidchashyi">
                 <motion.div
                   animate={{ x: 0 }}
-                  initial={{ x: -100 }}
+                  initial={{ x: -1000 }}
                   transition={{ delay: 0.5 }}
                 >
                   <Linkedin
@@ -109,7 +111,7 @@ const HomePage: NextPage = () => {
               <Link href="https://github.com/Marian1309">
                 <motion.div
                   animate={{ x: 0 }}
-                  initial={{ x: -100 }}
+                  initial={{ x: -1000 }}
                   transition={{ delay: 1 }}
                 >
                   <Github
@@ -122,20 +124,26 @@ const HomePage: NextPage = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-x-4 md:justify-start">
-          <p className="border-r-[1px] border-solid border-black pr-[8px] text-lg leading-5 md:pr-[2rem]">
+        <div className="flex flex-col items-center justify-center gap-x-4 md:flex-row md:justify-start">
+          <p className="w-[150px] border-b-[1px] border-solid border-gray-700 pb-4 pr-[8px] text-center text-lg leading-5 md:w-auto md:border-b-0 md:border-r-[1px] md:pb-0 md:pr-[1rem]">
             Teck Stack
           </p>
 
-          {skills.map((skill) => (
-            <Image
-              key={skill.id}
-              alt={skill.url}
-              height={iconSize}
-              src={skill.url}
-              width={iconSize}
-            />
-          ))}
+          <div className="flex items-center justify-center gap-x-3 pt-4 md:pt-0">
+            {skills.map((skill) => {
+              return (
+                <div className="block">
+                  <Image
+                    key={skill.id}
+                    alt={skill.url}
+                    height={iconSize}
+                    src={skill.url}
+                    width={iconSize}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
