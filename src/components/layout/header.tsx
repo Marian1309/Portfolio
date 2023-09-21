@@ -11,7 +11,7 @@ const Header: FC = () => {
   const pathaname = usePathname();
 
   return (
-    <div className="flex h-20 w-full items-center justify-between px-8 shadow-[0_0_10px_rgba(0,0,0,.09)]">
+    <div className="flex h-20 w-full items-center justify-between px-8 shadow-[0_0_30px_rgba(0,0,0,.09)]">
       <p className="text-lg font-bold sm:text-xl">Marian.dev</p>
 
       <div className="flex items-center justify-center gap-x-4">

@@ -11,7 +11,7 @@ import { Github, Linkedin } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import TypeIt from 'typeit-react';
 
-import { handleWidth } from '@/lib/utils';
+import { cn, handleWidth } from '@/lib/utils';
 
 import clerk from '../assets/icons/clerk.png';
 import css from '../assets/icons/css.svg';
@@ -71,11 +71,16 @@ const HomePage: NextPage = () => {
   window.addEventListener('resize', handle);
 
   return (
-    <section className="container flex items-center justify-center pt-2 md:pt-32">
+    <section
+      className={cn(
+        'container flex items-center justify-center md:pt-32',
+        resolvedTheme === 'light' && 'pt-6'
+      )}
+    >
       <div>
         <div className="flex-row items-center justify-center text-center md:flex md:text-left">
           <div
-            className="order-1 mx-auto my-[20px] h-[22rem] w-[18rem] animate-[morph_8s_ease-in-out_infinite] border-[2px] border-solid border-[#2d2e32] bg-cover bg-center bg-no-repeat transition-[all_1s_ease-in-out] md:ml-12"
+            className="order-1 mx-auto mb-[20px] h-[22rem] w-[18rem] animate-[morph_8s_ease-in-out_infinite] border-[2px] border-solid border-[#2d2e32] bg-cover bg-center bg-no-repeat transition-[all_1s_ease-in-out] md:ml-12"
             style={{ backgroundImage: `url(${me.src})` }}
           />
 
