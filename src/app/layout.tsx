@@ -2,7 +2,6 @@ import type { FC, ReactNode } from 'react';
 
 import type { Metadata } from 'next';
 
-import HotToastProvider from '@/services/providers/hot-toast';
 import ThemeProvider from '@/services/providers/theme';
 
 import { poppins } from '@/lib/fonts';
@@ -38,8 +37,6 @@ const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
-        <HotToastProvider />
-
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
