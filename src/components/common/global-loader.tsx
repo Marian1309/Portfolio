@@ -6,8 +6,8 @@ import { BounceLoader } from 'react-spinners';
 
 const GlobalLoader: FC = () => {
   return (
-    <div className="h-mobile flex-center">
-      <BounceLoader color="#641ae6" loading size={40} />
+    <div className="h-[calc(100vh-70px)] flex-center">
+      <BounceLoader color="#bbb6b0" loading size={40} />
     </div>
   );
 };

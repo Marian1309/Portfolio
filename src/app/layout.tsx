@@ -43,10 +43,8 @@ const RootLayout: FC<Props> = ({ children }) => {
           enableSystem
           themes={['light', 'dark']}
         >
-          <div className="overflow-hidden">
-            <Header />
-            {children}
-          </div>
+          <Header />
+          {children}
         </ThemeProvider>
       </body>
     </html>

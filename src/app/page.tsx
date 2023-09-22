@@ -73,14 +73,14 @@ const HomePage: NextPage = () => {
   return (
     <section
       className={cn(
-        'container flex items-center justify-center overflow-hidden md:pt-32',
+        'container flex min-h-[calc(75vh)] items-center justify-center overflow-hidden',
         resolvedTheme === 'light' && 'pt-6'
       )}
     >
       <div className="overflow-hidden">
         <div className="flex-row items-center justify-center text-center md:flex md:text-left">
           <div
-            className="order-1 mx-auto mb-[20px] h-[22rem] w-[18rem] animate-[morph_8s_ease-in-out_infinite] border-[2px] border-solid border-[#2d2e32] bg-cover bg-center bg-no-repeat transition-[all_1s_ease-in-out] md:ml-12"
+            className="order-1 mx-auto mb-[20px] h-[22rem] w-[18rem] animate-[morph_8s_ease-in-out_infinite] border-[2px] border-solid border-[#2d2e32] bg-cover bg-center bg-no-repeat transition-[all_1s_ease-in-out] lg:ml-12"
             style={{ backgroundImage: `url(${me.src})` }}
           />
 
@@ -94,7 +94,7 @@ const HomePage: NextPage = () => {
               />
             </p>
 
-            <p className="break-words">
+            <p className="break-words font-normal">
               Hi, {"I'm "} Marian Pidchashyi. A passionate Front-end React
               Developer based in Ivano-Frankivsk, Ukraine.
             </p>
@@ -132,7 +132,7 @@ const HomePage: NextPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-x-4 md:flex-row md:justify-start">
+        <div className="mt-12 flex flex-col items-center justify-center gap-x-4 md:flex-row md:justify-start">
           <p className="w-[150px] border-b-[1px] border-solid border-gray-700 pb-4 pr-[8px] text-center text-lg leading-5 md:w-auto md:border-b-0 md:border-r-[1px] md:pb-0 md:pr-[1rem]">
             Teck Stack
           </p>
@@ -140,10 +140,11 @@ const HomePage: NextPage = () => {
           <div className="flex items-center justify-center gap-x-3 pt-4 md:pt-0">
             {skills.map((skill) => {
               return (
-                <div className="block">
+                <div className="group cursor-pointer">
                   <Image
                     key={skill.id}
                     alt={skill.url}
+                    className="group-hover:animate-bounce"
                     height={iconSize}
                     src={skill.url}
                     width={iconSize}
