@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 
 import Image from 'next/image';
@@ -20,10 +22,14 @@ const Card: FC<CardProps> = ({ project }) => {
       <div className="max-h-[300px] overflow-hidden shadow-sm">
         <Image
           alt={project.title}
-          className="h-auto w-[100%] cursor-pointer overflow-clip rounded-lg transition-all ease-in-out hover:-translate-y-[30%]"
+          className={cn(
+            'h-auto w-[100%] cursor-pointer overflow-clip rounded-lg transition-all ease-in-out',
+            project.title === 'Spotify Clone' && 'hover:-translate-y-[18%]',
+            project.title === 'Movix' && 'hover:-translate-y-[48%]'
+          )}
           height={1000}
           src={project.imageUrl}
-          style={{ transitionDuration: '5s' }}
+          style={{ transitionDuration: '4s' }}
           width={1000}
         />
       </div>

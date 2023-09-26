@@ -1,3 +1,5 @@
+'use client';
+
 import type { NextPage } from 'next';
 
 import type { Project } from '@/types';
@@ -28,21 +30,21 @@ const ProjectsPage: NextPage = () => {
     },
     {
       id: 2,
-      imageUrl: Projects.Spotify.src,
-      title: 'Spotify Clone',
-      icon: Projects.SpotifyIcon,
+      imageUrl: Projects.Movix.src,
+      title: 'Movix',
+      icon: Projects.MovixLogo,
       content:
-        'A Spotify clone - is a digital music service, where you can listen to music, upload your own songs and also by liking songs you will create your list of favorite songs, but without streaming, song will upload fully.',
+        'A web application for viewing information about various movies and TV shows. Media resources are divided into several sections. The following options are available: Searching for a movie by name, sorting them by category and information about the movie itself (Cast, overview and short videos)',
       stack: [
         'TypeScript',
         'Next.js',
-        'Supabase',
+        'React-Player',
         'TailwindCSS',
-        'Use-Sound',
+        'React-Query',
         'Zustand'
       ],
-      githubUrl: 'https://github.com/Marian1309/Spotify',
-      demo: 'https://spotify.marian1309.vercel.app'
+      githubUrl: 'https://github.com/Marian1309/Movix',
+      demo: 'https://movix.marian1309.vercel.app'
     }
   ];
 
