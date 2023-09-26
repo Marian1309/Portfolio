@@ -37,7 +37,7 @@ const Card: FC<CardProps> = ({ project }) => {
       <div className="mx-auto block max-w-[350px] md:pl-8">
         <h2
           className={cn(
-            'flex items-center justify-center gap-x-2 py-4 text-xl font-bold',
+            'flex items-center justify-center gap-x-2 md:py-4 py-6 text-xl font-bold',
             montserrat.className
           )}
         >
@@ -58,7 +58,7 @@ const Card: FC<CardProps> = ({ project }) => {
           ))}
         </div>
 
-        <div className="flex cursor-pointer items-center justify-evenly pt-6 dark:pt-7 md:pt-4">
+        <div className="flex cursor-pointer items-center justify-evenly pt-8 dark:pt-7 md:pt-4">
           <Link
             className="flex items-center justify-center gap-x-1 transition-colors hover:text-royalBlue dark:text-white dark:hover:text-royalBlue"
             href={project.githubUrl}
