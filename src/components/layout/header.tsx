@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import ThemeToggle from '../common/theme-toggle';
+import ThemeToggle from '@/components/common/theme-toggle';
 
 const Header: FC = () => {
   const router = useRouter();
@@ -37,7 +37,7 @@ const Header: FC = () => {
         {links.map((link) => (
           <button
             key={link.id}
-            className="text-sm tracking-wide transition-colors dark:text-white sm:text-lg"
+            className="text-sm tracking-wide transition-colors hover:text-royalBlue sm:text-lg"
             onClick={() => handleRoute(link.url)}
           >
             {link.title}

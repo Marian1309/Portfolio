@@ -21,6 +21,8 @@ module.exports = {
       },
 
       colors: {
+        royalBlue: '#4169E1',
+
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
 
