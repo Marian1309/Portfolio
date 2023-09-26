@@ -16,6 +16,12 @@ const Header: FC = () => {
     }
   };
 
+  const links: { id: number; title: string; url: string }[] = [
+    { id: 1, title: 'Home', url: '/' },
+    { id: 2, title: 'Projects', url: '/projects' },
+    { id: 3, title: 'Contact', url: '/contact' }
+  ];
+
   return (
     <div className="flex h-20 w-full items-center justify-between px-12 shadow-[0_0_30px_rgba(0,0,0,.09)]">
       <button
@@ -28,19 +34,15 @@ const Header: FC = () => {
       <div className="flex items-center justify-center gap-x-4">
         <ThemeToggle />
 
-        <button
-          className="text-sm tracking-wide transition-colors dark:text-white sm:text-lg"
-          onClick={() => handleRoute('/')}
-        >
-          Home
-        </button>
-
-        <button
-          className="text-sm tracking-wide transition-colors dark:text-white sm:text-lg"
-          onClick={() => handleRoute('/projects')}
-        >
-          Projects
-        </button>
+        {links.map((link) => (
+          <button
+            key={link.id}
+            className="text-sm tracking-wide transition-colors dark:text-white sm:text-lg"
+            onClick={() => handleRoute(link.url)}
+          >
+            {link.title}
+          </button>
+        ))}
       </div>
     </div>
   );

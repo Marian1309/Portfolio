@@ -13,7 +13,7 @@ import './globals.scss';
 export const metadata: Metadata = {
   title: {
     template: '%s • Marian Pidchashyi',
-    default: 'Marian Pidchashyi'
+    default: 'Marian Pidchashyi | Frontend Developer'
   },
   description: 'Marian Pidchashyi Portfolio',
   creator: 'Marian Pidchashyi',
