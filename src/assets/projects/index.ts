@@ -1,4 +1,4 @@
-export { default as Spotify } from './Spotify.png';
+export { default as Spotify } from './spotify.png';
 export { default as SpotifyIcon } from './spotify-icon.svg';
 
 export { default as Movix } from './movix.png';
