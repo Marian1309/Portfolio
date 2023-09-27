@@ -18,7 +18,7 @@ const ProjectsPage: NextPage = () => {
       title: 'Spotify Clone',
       icon: Projects.SpotifyIcon,
       content:
-        'A Spotify clone - is a digital music service, where you can listen to music, upload your own songs and also by liking songs you will create your list of favorite songs, but without streaming, song will upload fully.',
+        'A Spotify clone - is a digital music service, where you can listen to music, upload your own songs but without streaming, song will upload fully.',
       stack: [
         'TypeScript',
         'Next.js',
@@ -72,7 +72,7 @@ const ProjectsPage: NextPage = () => {
     },
     {
       id: 4,
-      imageUrl: Projects.Discrod.src,
+      imageUrl: Projects.Discord.src,
       title: 'Discord Clone',
       icon: Projects.DiscrodIcon.src,
       content:
@@ -91,6 +91,43 @@ const ProjectsPage: NextPage = () => {
       githubUrl: 'https://github.com/Marian1309/Discord',
       demo: 'https://discord.marian1309.vercel.app',
       delay: 1.2
+    },
+    {
+      id: 5,
+      imageUrl: Projects.Store.src,
+      title: 'E-Commerce Store',
+      icon: Projects.StoreIcon.src,
+      content: 'An example of classic E-Commerce Store.',
+      stack: [
+        'TypeScript',
+        'Next.js',
+        'TailwindCSS',
+        'React-Hook-Form',
+        'ShadcnUI',
+        'Zustand'
+      ],
+      githubUrl: 'https://github.com/Marian1309/E-Commerce-Store',
+      demo: 'https://stores.marian1309.vercel.app',
+      delay: 1.6
+    },
+    {
+      id: 6,
+      imageUrl: Projects.Dahsboard.src,
+      title: 'E-Commerce Dashboard',
+      icon: Projects.DashboardIcon.src,
+      content: 'An Admin Dashboard to E-Commerce Store.',
+      stack: [
+        'TypeScript',
+        'Next.js',
+        'TailwindCSS',
+        'Prisma',
+        'ShadcnUI',
+        'React-Hook-Form',
+        'Cloudinary'
+      ],
+      githubUrl: 'https://github.com/Marian1309/E-Commerce-Dashboard',
+      demo: 'https://admin-dashboard.marian1309.vercel.app',
+      delay: 2.0
     }
   ];
 

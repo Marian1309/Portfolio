@@ -18,11 +18,11 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ project }) => {
   return (
-    <div className="m-4 block max-w-[860px] items-center justify-center rounded-md p-5 shadow-lg md:m-8 md:flex">
+    <div className="block max-w-[860px] items-center justify-center rounded-md p-5 shadow-lg md:m-6 md:flex">
       <div className="max-h-[300px] overflow-hidden shadow-sm">
         <Image
           alt={project.title}
-          className="h-auto w-[100%] cursor-pointer overflow-clip rounded-lg"
+          className="h-auto w-[100%] max-w-[500px] cursor-pointer rounded-lg"
           height={1000}
           src={project.imageUrl}
           style={{ transitionDuration: '4s' }}
@@ -38,7 +38,7 @@ const Card: FC<CardProps> = ({ project }) => {
           )}
         >
           {project.title}
-          <Image alt="Niga" height={24} src={project.icon} width={24} />
+          <Image alt="Niga" height={20} src={project.icon} width={20} />
         </h2>
 
         <p className="text-md text-center font-normal">{project.content}</p>
