@@ -39,7 +39,7 @@ const RootLayout: FC<Props> = ({ children }) => {
       <body className={poppins.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           themes={['light', 'dark']}
         >
