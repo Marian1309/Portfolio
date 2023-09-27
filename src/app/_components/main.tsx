@@ -30,7 +30,7 @@ const Main: FC = () => {
     ];
 
   return (
-    <div className="mx-auto flex max-w-[500px] flex-col gap-y-6">
+    <div className="mx-auto flex max-w-[500px] flex-col gap-y-6 pr-12">
       <p className="text-3xl font-bold text-neutral-800 dark:text-white md:text-5xl lg:text-6xl">
         <TypeIt
           options={{
@@ -41,8 +41,14 @@ const Main: FC = () => {
       </p>
 
       <p className="break-words font-normal">
-        Hi, {"I'm "} Marian Pidchashyi. A passionate Front-end React Developer
-        based in Ivano-Frankivsk, Ukraine.
+        Hi, {"I'm "}{' '}
+        <span className="cursor-pointer font-bold underline">
+          Marian Pidchashyi
+        </span>
+        . I am a highly motivated self-taught Front-end React Developer with
+        1.5+ years of experience in developing user-friendly web-applications.
+        Strong creative and analytical skills. No experience working in a team
+        yet. Based in Ivano-Frankivsk, Ukraine.
       </p>
 
       <div className="flex items-center justify-center gap-x-4 pb-8 md:justify-start">

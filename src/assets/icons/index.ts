@@ -16,3 +16,6 @@ export { default as PrismaWhite } from './prisma-original.svg';
 export { default as PrismaDark } from './prisma.svg';
 
 export { default as Me } from './me.png';
+
+export { default as Telegram } from './telegram.svg';
+export { default as Gmail } from './gmail.ico';
