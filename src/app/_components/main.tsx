@@ -30,7 +30,7 @@ const Main: FC = () => {
     ];
 
   return (
-    <div className="mx-auto flex max-w-[500px] flex-col gap-y-6 pr-12">
+    <div className="mx-auto flex max-w-[500px] flex-col gap-y-6 sm:pr-12">
       <p className="text-3xl font-bold text-neutral-800 dark:text-white md:text-5xl lg:text-6xl">
         <TypeIt
           options={{
@@ -51,7 +51,7 @@ const Main: FC = () => {
         yet. Based in Ivano-Frankivsk, Ukraine.
       </p>
 
-      <div className="flex items-center justify-center gap-x-4 pb-8 md:justify-start">
+      <div className="flex items-center justify-center gap-x-4 pb-5 md:justify-start">
         {links.map(({ icon: Icon, ...link }) => (
           <Link aria-label={link.label} href={link.href}>
             <motion.div

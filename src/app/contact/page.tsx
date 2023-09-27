@@ -14,12 +14,9 @@ const ContactPage: NextPage = () => {
 
           <div>
             <h3 className="font-bold">Email</h3>
-            <a
-              className="transition-colors hover:text-royalBlue"
-              href="https://mail.google.com/mail/u/0/#inbox?compose=SxfkdsGFPDxtcTVqbSgNvLmLNZfGdqZmrxVZftFvDDVfvDKrzLrLzXJgztjhXXxclnKHlgZGJFBNpkzXCgzTKGcVnCnfTxxXDWJWdtMtVbRjJKDbMbB"
-            >
+            <p className="transition-colors hover:text-royalBlue">
               pidchashymaryan@gmail.com
-            </a>
+            </p>
           </div>
         </div>
 
@@ -31,7 +28,7 @@ const ContactPage: NextPage = () => {
 
             <a
               className="transition-colors hover:text-royalBlue"
-              href="https://telegram.me/pidchashyi"
+              href="https://t.me/pidchashyi"
             >
               @pidchashyi
             </a>
