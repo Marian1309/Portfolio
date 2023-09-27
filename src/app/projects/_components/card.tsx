@@ -18,15 +18,11 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({ project }) => {
   return (
-    <div className="m-4 block max-w-[860px] items-start justify-center rounded-md p-5 shadow-lg md:m-8 md:flex">
+    <div className="m-4 block max-w-[860px] items-center justify-center rounded-md p-5 shadow-lg md:m-8 md:flex">
       <div className="max-h-[300px] overflow-hidden shadow-sm">
         <Image
           alt={project.title}
-          className={cn(
-            'h-auto w-[100%] cursor-pointer overflow-clip rounded-lg transition-all ease-in-out',
-            project.title === 'Spotify Clone' && 'hover:-translate-y-[18%]',
-            project.title === 'Movix' && 'hover:-translate-y-[48%]'
-          )}
+          className="h-auto w-[100%] cursor-pointer overflow-clip rounded-lg"
           height={1000}
           src={project.imageUrl}
           style={{ transitionDuration: '4s' }}
@@ -37,7 +33,7 @@ const Card: FC<CardProps> = ({ project }) => {
       <div className="mx-auto block max-w-[350px] md:pl-8">
         <h2
           className={cn(
-            'flex items-center justify-center gap-x-2 md:py-4 py-6 text-xl font-bold',
+            'flex items-center justify-center gap-x-2 py-6 text-xl font-bold md:py-4',
             montserrat.className
           )}
         >

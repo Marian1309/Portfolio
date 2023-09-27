@@ -23,7 +23,7 @@ const Header: FC = () => {
   ];
 
   return (
-    <div className="flex h-20 w-full items-center justify-between px-12 shadow-[0_0_30px_rgba(0,0,0,.09)]">
+    <div className="flex h-20 w-full items-center justify-between px-6 shadow-[0_0_30px_rgba(0,0,0,.09)] sm:px-12">
       <button
         className="text-lg font-bold sm:text-xl"
         onClick={() => handleRoute('/')}

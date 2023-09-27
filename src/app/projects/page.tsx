@@ -2,6 +2,8 @@
 
 import type { NextPage } from 'next';
 
+import { motion } from 'framer-motion';
+
 import type { Project } from '@/types';
 
 import * as Projects from '@/assets/projects';
@@ -26,7 +28,8 @@ const ProjectsPage: NextPage = () => {
         'Zustand'
       ],
       githubUrl: 'https://github.com/Marian1309/Spotify',
-      demo: 'https://spotify.marian1309.vercel.app'
+      demo: 'https://spotify.marian1309.vercel.app',
+      delay: 0
     },
     {
       id: 2,
@@ -34,7 +37,7 @@ const ProjectsPage: NextPage = () => {
       title: 'Movix',
       icon: Projects.MovixLogo,
       content:
-        'A web application for viewing information about various movies and TV shows. Media resources are divided into several sections. The following options are available: Searching for a movie by name, sorting them by category and information about the movie itself (Cast, overview and short videos)',
+        'A web application for viewing information about various movies and TV shows. Media resources are divided into several sections.',
       stack: [
         'TypeScript',
         'Next.js',
@@ -44,14 +47,64 @@ const ProjectsPage: NextPage = () => {
         'Zustand'
       ],
       githubUrl: 'https://github.com/Marian1309/Movix',
-      demo: 'https://movix.marian1309.vercel.app'
+      demo: 'https://movix.marian1309.vercel.app',
+      delay: 0.4
+    },
+    {
+      id: 3,
+      imageUrl: Projects.Threads.src,
+      title: 'Threads Clone',
+      icon: Projects.ThreadsIcon.src,
+      content: 'A clone of a popular social network.',
+      stack: [
+        'TypeScript',
+        'Next.js',
+        'TailwindCSS',
+        'Prisma',
+        'Clerk',
+        'Uploadthing',
+        'Zustand',
+        'Svix'
+      ],
+      githubUrl: 'https://github.com/Marian1309/Threads',
+      demo: 'https://threads.marian1309.vercel.app',
+      delay: 0.8
+    },
+    {
+      id: 4,
+      imageUrl: Projects.Discrod.src,
+      title: 'Discord Clone',
+      icon: Projects.DiscrodIcon.src,
+      content:
+        'Discord Clone is the easiest way to talk over voice, video, and text. Talk, chat, hang out, and stay close with your friends and communities.',
+      stack: [
+        'TypeScript',
+        'Next.js',
+        'TailwindCSS',
+        'Prisma',
+        'Clerk',
+        'Uploadthing',
+        'LiveKit',
+        'ShadcnUI',
+        'ScoketIO'
+      ],
+      githubUrl: 'https://github.com/Marian1309/Discord',
+      demo: 'https://discord.marian1309.vercel.app',
+      delay: 1.2
     }
   ];
 
   return (
     <div className="flex flex-wrap items-center justify-center">
       {projects.map((project) => (
-        <Card key={project.id} project={project} />
+        <motion.div
+          key={project.id}
+          animate={{ x: 0 }}
+          initial={{ x: -2000 }}
+          transition={{ delay: project.delay }}
+        >
+          <Card project={project} />
+        </motion.div>
       ))}
     </div>
   );

@@ -7,4 +7,5 @@ export type Project = {
   stack: string[];
   githubUrl: string;
   demo: string;
+  delay: number;
 };
