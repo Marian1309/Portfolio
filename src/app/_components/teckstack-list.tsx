@@ -43,7 +43,7 @@ const TechStackList: FC<Props> = ({ skills }) => {
   window.addEventListener('resize', handle);
 
   return (
-    <div className="flex items-center justify-center gap-x-3 pt-4 md:pt-0">
+    <div className="flex items-center justify-center gap-x-3 pb-6 pt-4 md:pt-0">
       {skills.map(({ src }, index) => {
         return (
           <div key={index} className="group cursor-pointer">

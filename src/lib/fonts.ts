@@ -1,4 +1,4 @@
-import { Montserrat, Poppins } from 'next/font/google';
+import { DynaPuff, Montserrat, Poppins } from 'next/font/google';
 
 export const poppins = Poppins({
   subsets: ['latin'],
@@ -6,6 +6,11 @@ export const poppins = Poppins({
 });
 
 export const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '600']
+});
+
+export const dynaPuff = DynaPuff({
   subsets: ['latin'],
   weight: ['400', '600']
 });

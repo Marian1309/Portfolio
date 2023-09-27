@@ -31,7 +31,7 @@ const HomePage: NextPage = () => {
   return (
     <section
       className={cn(
-        'container flex items-center justify-center overflow-hidden',
+        'container flex items-center justify-center overflow-hidden md:h-[calc(80vh-70px)]',
         resolvedTheme === 'light' && 'pt-6'
       )}
     >

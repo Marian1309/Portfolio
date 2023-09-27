@@ -12,25 +12,53 @@ import type { Project } from '@/types';
 import { montserrat } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from '@/components/ui/tooltip';
+
 type CardProps = {
   project: Project;
 };
 
 const Card: FC<CardProps> = ({ project }) => {
   return (
-    <div className="block max-w-[860px] items-center justify-center rounded-md p-5 shadow-lg md:m-6 md:flex">
-      <div className="max-h-[300px] overflow-hidden shadow-sm">
-        <Image
-          alt={project.title}
-          className="h-auto w-[100%] max-w-[500px] cursor-pointer rounded-lg"
-          height={1000}
-          src={project.imageUrl}
-          style={{ transitionDuration: '4s' }}
-          width={1000}
-        />
-      </div>
+    <div
+      className={cn(
+        'block max-w-[860px] items-center justify-center rounded-md p-5 shadow-lg md:m-6 md:flex',
+        project.id % 2 === 0 && 'flex-row-reverse'
+      )}
+    >
+      <TooltipProvider delayDuration={100}>
+        <Tooltip>
+          <TooltipTrigger>
+            <Link
+              className="max-h-[300px] overflow-hidden shadow-sm"
+              href={project.imageUrl}
+            >
+              <Image
+                alt={project.title}
+                className="h-auto w-[100%] max-w-[500px] cursor-pointer rounded-lg"
+                height={1000}
+                src={project.imageUrl}
+                style={{ transitionDuration: '4s' }}
+                width={1000}
+              />
+            </Link>
+          </TooltipTrigger>
 
-      <div className="mx-auto block max-w-[350px] md:pl-8">
+          <TooltipContent>Click on photo in order to see it</TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+
+      <div
+        className={cn(
+          'mx-auto block max-w-[350px]',
+          project.id % 2 === 1 ? 'md:pl-8' : 'md:pr-8'
+        )}
+      >
         <h2
           className={cn(
             'flex items-center justify-center gap-x-2 py-6 text-xl font-bold md:py-4',
