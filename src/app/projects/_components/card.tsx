@@ -73,10 +73,7 @@ const Card: FC<CardProps> = ({ project }) => {
 
         <div className="flex flex-wrap items-center justify-center gap-3 pt-6 text-[12px]">
           {project.stack.map((technology, index) => (
-            <div
-              key={index}
-              className="w-fit rounded-md p-2 font-bold shadow-[0_0_10px_rgba(0,0,0,.1)] dark:shadow-[0_0_10px_white]"
-            >
+            <div key={index} className="w-fit rounded-md p-2 font-bold">
               {technology}
             </div>
           ))}
