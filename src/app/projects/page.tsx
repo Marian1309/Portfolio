@@ -137,7 +137,7 @@ const ProjectsPage: NextPage = () => {
         <motion.div
           key={project.id}
           animate={{ x: 0 }}
-          initial={{ x: project.id % 2 === 0 ? 1000 : -1000 }}
+          initial={{ x: project.id % 2 === 0 ? 1500 : -1500 }}
           transition={{ delay: project.delay }}
         >
           <Card project={project} />
